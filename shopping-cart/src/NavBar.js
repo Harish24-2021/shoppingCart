@@ -15,7 +15,7 @@ function NavBar(props) {
   <a className={props.navBarKey==='home'?"active":""} href="#" onClick={()=>{handleClick("home")}}> Home</a> 
   <a className={props.navBarKey==='cart'?"active":""} href="#" onClick={()=>{handleClick("cart")}}> Cart</a> 
   <a className={props.navBarKey==='billing'?"active":""} href="#" onClick={()=>{handleClick("billing")}}> Billing</a> 
-  <a className={props.navBarKey==='logout'?"active":""}  href="#" onClick={()=>{handleClick("logout")}}>Logout</a>
+  <a className={props.navBarKey==='addproducts'?"active":""}  href="#" onClick={()=>{handleClick("addproducts")}}>Add Products</a>
 </div>
    
   );
