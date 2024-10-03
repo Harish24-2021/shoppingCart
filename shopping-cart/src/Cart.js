@@ -1,20 +1,21 @@
 import './App.css';
-let Cart= (props) =>{
 
-
+const Cart = ({ productDetails }) => {
+  const { image, name, Price, quantity } = productDetails;
+  
   return (
     <div className='product-details'>
-    <div className="card">
-  <img className='product-img' src={props.productDetails.image} alt="" />
-  <div className="container">
-    <h4><b>{props.productDetails.name}</b></h4> 
-    <p>Price Rs: {props.productDetails.Price}/Piece</p> 
-    <p>Quantity Added: {props.productDetails.quantity}</p> 
-    <p>Cost : {props.productDetails.quantity*props.productDetails.Price}</p> 
-  </div>
-  </div>
-  </div>
+      <div className="card">
+        <img className='product-img' src={image} alt={name} />
+        <div className="container">
+          <h4><b>{name}</b></h4> 
+          <p>Price Rs: {Price}/Piece</p> 
+          <p>Quantity Added: {quantity}</p> 
+          <p>Cost: {quantity * Price}</p> 
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Cart;

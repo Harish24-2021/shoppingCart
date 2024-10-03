@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Axios from 'axios'; // Make sure to import Axios
+import { useSelector, useDispatch } from 'react-redux'
+import {setProductsData}  from '../Store/productsSlice'
+
 const AddProducts = () => {
-  // State for form inputs
   const [formValues, setFormValues] = useState({
     productName: '',
     productPrice: '',
     productQuantity: '',
     productImage:''
   });
+  const dispatch = useDispatch()
 
   // Handle input change
   const handleInputChange = (e) => {
@@ -26,7 +29,8 @@ const AddProducts = () => {
     Axios.post('http://127.0.0.1:8000/api/createProduct', formValues)
       .then((response) => {
         if (response.status === 200) {
-          console.log('Product added successfully');
+          console.log(response);
+          dispatch(setProductsData(response.data))
           // setFormValues({ name: '', price: '', quantity: '' });
         }
       })
